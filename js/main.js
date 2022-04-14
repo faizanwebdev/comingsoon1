@@ -23,8 +23,15 @@ function sendmail(){
 //                $('#email-error').css({"display":"none"});
                 if(contact !== "" && contact.length == 10){
 //                    $('#contact-error').css({"display":"none"});
-                    if(website !== ""){
+//                    if(website !== ""){
 //                        $('#website-error').css({"display":"none"});
+//                    }
+//                    else{
+//                        $('#website').focus();
+//                        alert("Please Enter Your Website URL");
+//                    }
+                    if(message !== ""){
+//                        $('#message-error').css({"display":"none"});
                         $.ajax({
                             url: 'mail.php',
                             type: 'POST',
@@ -69,18 +76,10 @@ function sendmail(){
                         });
                     }
                     else{
-                        $('#website').focus();
-                        alert("Please Enter Your Website URL");
-                    }
-//                    if(message !== ""){
-//                        $('#message-error').css({"display":"none"});
-                        
-//                    }
-//                    else{
-//                        $('#message').focus();
-//                        alert("Please Enter Your Message");
+                        $('#message').focus();
+                        alert("Please Enter Your Message");
 //                        $('#message-error').css({"display":"inline"});
-//                    }
+                    }
                 }
                 else{
                     $('#contact').focus();

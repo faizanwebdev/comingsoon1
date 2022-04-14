@@ -17,10 +17,10 @@ if(isset($_POST['signup']) && $_SERVER['REQUEST_METHOD'] == "POST"){
     $email = cleanup($_POST['email']);
     $contact = cleanup($_POST['contact']);
     $message = cleanup($_POST['message']);
-    if(empty($message)){
-        $message = "NA";
-    }
     $website = cleanup($_POST['website']);
+    if(empty($website)){
+        $website = "NA";
+    }
     $contactlen = strlen($contact);
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
         echo "validemail";
@@ -30,7 +30,7 @@ if(isset($_POST['signup']) && $_SERVER['REQUEST_METHOD'] == "POST"){
         echo "validnumber";
         die();
         }
-    if(empty($name) || empty($email) || empty($contact) || empty($website)){
+    if(empty($name) || empty($email) || empty($contact) || empty($message)){
         echo "mandatory";
     }
     else{
